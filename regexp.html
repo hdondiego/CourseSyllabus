@@ -1,0 +1,33 @@
+<!--
+ Author: Hector Dondiego
+ Class:  Software Engineering
+ Project: Lab 2 / RegExp Tester
+ Description: This is the combined HTML, CSS, and JavaScript code for this Regular Expressions exercise.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body {
+    			font-family: "Trebuchet MS", Helvetica, sans-serif;
+    			text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<label>Enter string to verify: </label><input type="text" id="data" name="data"><br>
+		<label>Enter Regular Expression:</label><input type="text" id="reg_exp" name="reg_exp"><br>
+		<label>Result: </label><input type="text" id="output" name="output" readonly><br>
+		<button id="verifyBtn" name="verifyBtn" type="button" onclick="verify_regexp()">Verify</button>
+		
+		<script type="text/javascript">
+			function verify_regexp(){
+				let data = document.getElementById("data").value;
+				let exp = RegExp(document.getElementById("reg_exp").value);
+				let verifyBtn = document.getElementById("verifyBtn");
+				document.getElementById("output").value = exp.test(data).toString();
+			}
+		</script>
+	</body>
+</html>
